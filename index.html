@@ -32,7 +32,9 @@
     function inputSearch() {
       let value = song.value
       var matches = [];
+      console.log("huh");
       let i = 0;
+      console.log("line");
       for (i = 0, i < songNameList.length, i++) {
         var currentSong = songNameList[i].toLowerCase();
         if (currentSong.match(value)) {
