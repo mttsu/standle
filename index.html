@@ -59,6 +59,12 @@
         };
       };
     };
+
+    function guessSong(obj) {
+      let songGuess = obj.textContent;
+      let realSong = import song from "./songoftheday.js";
+      console.log(realSong);
+    };
     song.addEventListener("input", inputSearch);
   </script>
   </body>
