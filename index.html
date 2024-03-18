@@ -21,9 +21,6 @@
         <li id="list5">
           <a href="#" id="list5a"></a>
         </li>
-        <li id="list6">
-          <a href="#" id="list6a"></a>
-        </li>
       </ul>
     </div>
   <script>
@@ -43,7 +40,19 @@
           break;
         };
       };
-      console.log(matches);
+      for (let i = 0; i < matches.length; i++) {
+        if (i === 0) {
+          document.getElementById("list1").textContent = matches[i];
+        } else if (i === 1) {
+          document.getElementById("list2").textContent = matches[i];
+        } else if (i === 2) {
+          document.getElementById("list3").textContent = matches[i];
+        } else if (i === 3) {
+          document.getElementById("list4").textContent = matches[i];
+        } else if (i === 4) {
+          document.getElementById("list5").textContent = matches[i];
+        };
+      };
     };
     song.addEventListener("input", inputSearch);
   </script>
