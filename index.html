@@ -66,12 +66,13 @@
     };
 
     function guessSong(obj) {
-      let songGuess = obj.textContent;
-      let realSong = songNameList[165]; // this is where the number that corresponds to the song of the day is. do not read this in order to not spoil the game!
-      console.log(realSong);
-      console.log(songGuess);
+      return function() {
+        let songGuess = obj.textContent;
+        let realSong = songNameList[165]; // this is where the number that corresponds to the song of the day is. do not read this in order to not spoil the game!
+        console.log(realSong);
+        console.log(songGuess);
+      };
     };
-
     song.addEventListener("input", inputSearch);
     list1.onclick = guessSong(list1);
     list2.onclick = guessSong(list2);
