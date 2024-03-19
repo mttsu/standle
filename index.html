@@ -73,11 +73,11 @@
     };
 
     song.addEventListener("input", inputSearch);
-    list1.addEventListener("click", guessSong(list1));
-    list2.addEventListener("click", guessSong(list2));
-    list3.addEventListener("click", guessSong(list3));
-    list4.addEventListener("click", guessSong(list4));
-    list5.addEventListener("click", guessSong(list5));
+    list1.onclick = guessSong(list1);
+    list2.onclick = guessSong(list2);
+    list3.onclick = guessSong(list3);
+    list4.onclick = guessSong(list4);
+    list5.onclick = guessSong(list5);
   </script>
   </body>
 </html>
