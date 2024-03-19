@@ -26,13 +26,18 @@
   <script>
     const songNameList = ["Public Service Announcement", "My Name Is", "Guilty Conscience", "Brain Damage", "Paul (SSLP)", "If I Had", "'97 Bonnie and Clyde", "Bitch", "Role Model", "Lounge", "My Fault", "Ken Kaniff (SSLP)", "Cum on Everybody", "Rock Bottom", "Just Don't Give a Fuck", "Soap", "As The World Turns", "I'm Shady", "Bad Meets Evil", "Still Don't Give a Fuck", "Public Service Announcement 2000", "Kill You", "Stan", "Paul (MMLP)", "Who Knew", "Steve Berman (MMLP)", "The Way I Am", "The Real Slim Shady", "Remember Me?", "I'm Back", "Marshall Mathers", "Ken Kaniff (MMLP)", "Drug Ballad", "Amityville", "Bitch Please II", "Kim", "Under the Influence", "Criminal", "Curtains Up (TES)", "White America", "Business", "Cleanin' Out My Closet", "Square Dance", "The Kiss", "Soldier", "Say Goodbye Hollywood", "Drips", "Without Me", "Paul Rosenberg", "Sing for the Moment", "Superman", "Hailie's Song", "Steve Berman (TES)", "When the Music Stops", "Say What You Say", "'Till I Collapse", "My Dad's Gone Crazy", "Curtains Close", "Curtains Up (Encore)", "Evil Deeds", "Never Enough", "Yellow Brick Road", "Like Toy Soldiers", "Mosh", "Puke", "My 1st Single", "Paul (Encore)", "Rain Man", "Big Weenie", "Em Calls Paul (Encore)", "Just Lose It", "Ass Like That", "Spend Some Time", "Mockingbird", "Crazy in Love", "One Shot 2 Shot", "Final Thought", "Encore/Curtains Down", "Dr. West", "3 a.m.", "My Mom", "Insane", "Bagpipes from Baghdad", "Hello", "Tonya", "Same Song & Dance", "We Made You", "Medicine Ball", "Paul (Relapse)", "Stay Wide Awake", "Old Time's Sake", "Must Be the Ganja", "Mr. Mathers", "Deja Vu", "Beautiful", "Crack a Bottle", "Steve Berman (Relapse)", "Underground", "Forever", "Hell Breaks Loose", "Buffalo Bill", "Elevator", "Taking My Ball", "Music Box", "Drop the Bomb On 'Em", "My Darling", "Careful What You Wish For", "Cold Wind Blows", "Talkin' 2 Myself", "On Fire", "W.T.P.", "Going Through Changes", "Not Afraid", "Seduction", "No Love", "Space Bound", "Cinderella Man", "25 To Life", "So Bad", "Almost Famous", "Love the Way You Lie", "You're Never Over", "Untitled", "Bad Guy", "Parking Lot", "Rhyme or Reason", "So Much Better", "Survival", "Legacy", "Asshole", "Berzerk", "Rap God", "Brainless", "Stronger Than I Was", "The Monster", "So Far...", "Love Game", "Headlights", "Evil Twin", "Walk On Water", "Believe", "Chloraseptic", "Untouchable", "River", "Remind Me (Intro)", "Remind Me", "Revival (Interlude)", "Like Home",  "Bad Husband", "Tragic Endings", "Framed", "Nowhere Fast", "Heat", "Offended", "Need Me", "In Your Head", "Castle", "Arose", "The Ringer", "Greatest", "Lucky You", "Paul (Kamikaze)", "Normal", "Em Calls Paul (Kamikaze)", "Fall", "Nice Guy", "Good Guy", "Venom", "Premonition (Intro)", "Unaccomodating", "You Gon' Learn", "Alfred (Interlude)", "Those Kinda Nights", "In Too Deep", "Godzilla", "Darkness", "Leaving Heaven", "Yah Yah", "Stepdad (Intro)", "Stepdad", "Marsh", "Never Love Again", "Little Engine", "Lock It Up", "Farewell", "No Regrets", "I Will", "Alfred (Outro)", "Alfred (Intro)", "Black Magic", "Alfred's Theme", "Tone Deaf", "Book of Rhymes", "Favorite Bitch", "Guns Blazing", "Gnat", "Higher", "These Demons", "Key", "She Loves Me", "Killer", "Zeus", "Thus Far", "Discombobulated"];                                  
     var song = document.getElementById("song");
+    var list1 = document.getElementById("list1a");
+    var list2 = document.getElementById("list2a");
+    var list3 = document.getElementById("list3a");
+    var list4 = document.getElementById("list4a");
+    var list5 = document.getElementById("list5a");
 
     function inputSearch() {
-      document.getElementById("list1").getElementsByTagName("a")[0].textContent = "";
-      document.getElementById("list2").getElementsByTagName("a")[0].textContent = "";
-      document.getElementById("list3").getElementsByTagName("a")[0].textContent = "";
-      document.getElementById("list4").getElementsByTagName("a")[0].textContent = "";
-      document.getElementById("list5").getElementsByTagName("a")[0].textContent = "";
+      list1.textContent = "";
+      list2.textContent = "";
+      list3.textContent = "";
+      list4.textContent = "";
+      list5.textContent = "";
       let value = song.value;
       var matches = [];
       console.log("line");
@@ -47,15 +52,15 @@
       };
       for (let i = 0; i < matches.length; i++) {
         if (i === 0) {
-          document.getElementById("list1").getElementsByTagName("a")[0].textContent = matches[i];
+          list1.textContent = matches[i];
         } else if (i === 1) {
-          document.getElementById("list2").getElementsByTagName("a")[0].textContent = matches[i];
+          list2.textContent = matches[i];
         } else if (i === 2) {
-          document.getElementById("list3").getElementsByTagName("a")[0].textContent = matches[i];
+          list3.textContent = matches[i];
         } else if (i === 3) {
-          document.getElementById("list4").getElementsByTagName("a")[0].textContent = matches[i];
+          list4.textContent = matches[i];
         } else if (i === 4) {
-          document.getElementById("list5").getElementsByTagName("a")[0].textContent = matches[i];
+          list5.textContent = matches[i];
         };
       };
     };
@@ -64,8 +69,15 @@
       let songGuess = obj.textContent;
       let realSong = songNameList[165]; // this is where the number that corresponds to the song of the day is. do not read this in order to not spoil the game!
       console.log(realSong);
+      console.log(songGuess);
     };
+
     song.addEventListener("input", inputSearch);
+    list1.addEventListener("click", guessSong(list1));
+    list2.addEventListener("click", guessSong(list2));
+    list3.addEventListener("click", guessSong(list3));
+    list4.addEventListener("click", guessSong(list4));
+    list5.addEventListener("click", guessSong(list5));
   </script>
   </body>
 </html>
